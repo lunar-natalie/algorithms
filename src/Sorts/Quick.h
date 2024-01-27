@@ -21,6 +21,7 @@ void quickSort(std::array<T, N> & arr)
         }
         return left;
     };
+
     std::function<void(Size, Size)> sort = [&sort, partition](auto left, auto right) mutable {
         if (left < right) {
             auto pivot = partition(left, right);
@@ -28,6 +29,7 @@ void quickSort(std::array<T, N> & arr)
             sort(pivot + 1, right);
         }
     };
+
     static_assert(N > 0, "Invalid array size");
     sort(0, N - 1);
 }

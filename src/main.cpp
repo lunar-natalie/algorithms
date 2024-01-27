@@ -39,8 +39,8 @@ int main() try
     show("Insertion", [](auto & a) { insertionSort(a); });
     show("Merge", [](auto & a) { mergeSort(a); });
     show("Quick", [](auto & a) { quickSort(a); }, true);
-
     return 0;
-} catch (std::exception & e) {
+}
+catch (std::exception & e) {
     std::cerr << e.what() << std::endl;
 }
