@@ -9,7 +9,7 @@ namespace algorithms {
 using Size = std::size_t;
 
 template<typename T>
-void swap(T & lhs, T & rhs)
+constexpr void swap(T & lhs, T & rhs)
 {
     auto tmp = lhs;
     lhs = rhs;
