@@ -21,7 +21,7 @@ void quickSort(std::array<T, N> & arr)
         }
         return left;
     };
-    std::function<void(Size, Size)> sort = [&arr, &sort, partition](auto left, auto right) mutable {
+    std::function<void(Size, Size)> sort = [&sort, partition](auto left, auto right) mutable {
         if (left < right) {
             auto pivot = partition(left, right);
             sort(left, pivot - 1);
