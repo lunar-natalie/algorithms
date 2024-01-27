@@ -12,7 +12,7 @@ namespace algorithms {
 template<typename T, auto N>
 void mergeSort(std::array<T, N> & arr)
 {
-    std::function<std::vector<T>(std::vector<T>)> impl = [&impl](auto vec) {
+    std::function<std::vector<T>(std::vector<T>)> impl = [&impl](auto vec) mutable {
         if (vec.size() > 1) {
             // Split into two partitions at midpoint
             std::size_t mid = vec.size() / 2;
