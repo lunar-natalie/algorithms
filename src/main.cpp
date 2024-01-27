@@ -12,13 +12,14 @@
 #include "Sorts/Insertion.h"
 #include "Sorts/Merge.h"
 #include "Sorts/Quick.h"
+#include "SampleData.h"
 
 using namespace algorithms;
 
 int main() try
 {
-    using Array = std::array<int, 8>;
-    Array unsorted{4, 2, 56, -1, 1, 0, 8, 9}; // Sample data
+    auto unsorted = sampleData;
+    using Array = typeof(unsorted);
 
     auto show = [unsorted](const std::string & label, const std::function<void(Array &)> & fn = [](auto &) {},
                            bool last = false) {

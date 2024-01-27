@@ -4,6 +4,7 @@ add_executable(algorithms main.cpp
         Sorts/Merge.h
         Sorts/Quick.h
         Utils.h
+        SampleData.h
 )
 target_include_directories(algorithms
         PRIVATE
