@@ -11,6 +11,7 @@
 #include "Sorts/Bubble.h"
 #include "Sorts/Insertion.h"
 #include "Sorts/Merge.h"
+#include "Sorts/Quick.h"
 
 using namespace algorithms;
 
@@ -36,7 +37,8 @@ int main() try
     show("Unsorted");
     show("Bubble", [](auto & a) { bubbleSort(a); });
     show("Insertion", [](auto & a) { insertionSort(a); });
-    show("Merge", [](auto & a) { mergeSort(a); }, true);
+    show("Merge", [](auto & a) { mergeSort(a); });
+    show("Quick", [](auto & a) { quickSort(a); }, true);
 
     return 0;
 } catch (std::exception & e) {
