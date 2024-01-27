@@ -20,7 +20,7 @@ int main() try
     using Array = std::array<int, 8>;
     Array unsorted{4, 2, 56, -1, 1, 0, 8, 9}; // Sample data
 
-    auto show = [unsorted](const std::string & label, const std::function<void(Array &)> & fn = [](auto _) {},
+    auto show = [unsorted](const std::string & label, const std::function<void(Array &)> & fn = [](auto &) {},
                            bool last = false) {
         // Copy array and execute sort callback
         auto copy = unsorted;
