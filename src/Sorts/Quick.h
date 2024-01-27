@@ -9,10 +9,9 @@
 #include "Utils.h"
 
 namespace algorithms {
-template<typename T, auto N>
+template<typename T, Size N>
 void quickSort(std::array<T, N> & arr)
 {
-    using Size = std::size_t;
     auto partition = [&arr](Size left, Size right) mutable -> Size {
         auto pivot = arr.at(left);
         while (left < right) {

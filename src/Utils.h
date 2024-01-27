@@ -3,7 +3,11 @@
 
 #pragma once
 
+#include <cstddef>
+
 namespace algorithms {
+using Size = std::size_t;
+
 template<typename T>
 void swap(T & lhs, T & rhs)
 {

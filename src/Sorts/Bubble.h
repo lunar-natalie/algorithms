@@ -8,7 +8,7 @@
 #include "Utils.h"
 
 namespace algorithms {
-template<typename T, auto N>
+template<typename T, Size N>
 void bubbleSort(std::array<T, N> & arr)
 {
     bool done;

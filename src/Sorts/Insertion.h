@@ -5,8 +5,10 @@
 
 #include <array>
 
+#include "Utils.h"
+
 namespace algorithms {
-template<typename T, auto N>
+template<typename T, Size N>
 void insertionSort(std::array<T, N> & arr)
 {
     // Assume the first value is sorted

@@ -8,14 +8,16 @@
 #include <functional>
 #include <stdexcept>
 
+#include "Utils.h"
+
 namespace algorithms {
-template<typename T, auto N>
+template<typename T, Size N>
 void mergeSort(std::array<T, N> & arr)
 {
     std::function<std::vector<T>(std::vector<T>)> impl = [&impl](auto vec) mutable {
         if (vec.size() > 1) {
             // Split into two partitions at midpoint
-            std::size_t mid = vec.size() / 2;
+            Size mid = vec.size() / 2;
             auto left = impl(std::vector(vec.begin(), vec.begin() + mid)); // 0..mid
             auto right = impl(std::vector(vec.begin() + mid, vec.end())); // mid..end
 
