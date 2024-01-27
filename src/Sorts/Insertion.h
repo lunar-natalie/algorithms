@@ -18,7 +18,7 @@ void insertionSort(std::array<T, N> & arr)
             arr[end + 1] = arr[end];
             --end;
         }
-        // Restore key at the right of the range
+        // Restore key at the end of the range
         arr[end + 1] = key;
     }
 }
