@@ -12,12 +12,12 @@ namespace Algorithms {
 template<typename T, std::size_t N>
 void mergeSort(std::array<T, N> & arr)
 {
-    std::function<std::vector<T>(std::vector<T>)> impl = [&impl](auto vec) mutable {
+    std::function<std::vector<T>(std::vector<T>)> sort = [&sort](auto vec) mutable {
         if (vec.size() > 1) {
             // Split into two partitions at midpoint
             std::size_t mid = vec.size() / 2;
-            auto left = impl(std::vector(vec.begin(), vec.begin() + mid)); // 0..mid
-            auto right = impl(std::vector(vec.begin() + mid, vec.end())); // mid..end
+            auto left = sort(std::vector(vec.begin(), vec.begin() + mid)); // 0..mid
+            auto right = sort(std::vector(vec.begin() + mid, vec.end())); // mid..end
 
             // Merge left and right into original vector
             auto il = 0, ir = 0, iv = 0;
@@ -31,7 +31,7 @@ void mergeSort(std::array<T, N> & arr)
         return vec;
     };
 
-    auto vec = impl(std::vector(arr.begin(), arr.end()));
+    auto vec = sort(std::vector(arr.begin(), arr.end()));
     // Return fixed-length array
     if (vec.size() != N)
         throw std::runtime_error("Vector/array size mismatch");
