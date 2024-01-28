@@ -1,0 +1,2 @@
+add_library(AlgorithmsLib INTERFACE)
+target_include_directories(AlgorithmsLib INTERFACE ${CMAKE_CURRENT_SOURCE_DIR})

@@ -5,9 +5,7 @@
 
 #include <cstddef>
 
-namespace algorithms {
-using Size = std::size_t;
-
+namespace Algorithms {
 template<typename T>
 constexpr void swap(T & lhs, T & rhs)
 {
@@ -15,4 +13,4 @@ constexpr void swap(T & lhs, T & rhs)
     lhs = rhs;
     rhs = tmp;
 }
-}// namespace algorithms
+}// namespace Algorithms

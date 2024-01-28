@@ -6,13 +6,13 @@
 #include <array>
 #include <functional>
 
-#include "Utils.h"
+#include "../Utils.hpp"
 
-namespace algorithms {
-template<typename T, Size N>
+namespace Algorithms {
+template<typename T, std::size_t N>
 void quickSort(std::array<T, N> & arr)
 {
-    auto partition = [&arr](Size left, Size right) mutable -> Size {
+    auto partition = [&arr](std::size_t left, std::size_t right) mutable -> std::size_t {
         auto pivot = arr.at(left);
         while (left < right) {
             while (arr.at(left) < pivot) ++left;
@@ -22,7 +22,7 @@ void quickSort(std::array<T, N> & arr)
         return left;
     };
 
-    std::function<void(Size, Size)> sort = [&sort, partition](auto left, auto right) mutable {
+    std::function<void(std::size_t, std::size_t)> sort = [&sort, partition](auto left, auto right) mutable {
         if (left < right) {
             auto pivot = partition(left, right);
             sort(left, pivot - 1);
@@ -33,4 +33,4 @@ void quickSort(std::array<T, N> & arr)
     static_assert(N > 0, "Invalid array size");
     sort(0, N - 1);
 }
-}// namespace algorithms
+}// namespace Algorithms

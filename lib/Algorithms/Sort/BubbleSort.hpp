@@ -5,10 +5,10 @@
 
 #include <array>
 
-#include "Utils.h"
+#include "../Utils.hpp"
 
-namespace algorithms {
-template<typename T, Size N>
+namespace Algorithms {
+template<typename T, std::size_t N>
 void bubbleSort(std::array<T, N> & arr)
 {
     bool done;
@@ -22,4 +22,4 @@ void bubbleSort(std::array<T, N> & arr)
         }
     } while (!done);
 }
-}// namespace algorithms
+}// namespace Algorithms

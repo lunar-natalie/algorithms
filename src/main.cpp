@@ -8,18 +8,14 @@
 #include <type_traits>
 #include <exception>
 
-#include "Sorts/Bubble.h"
-#include "Sorts/Insertion.h"
-#include "Sorts/Merge.h"
-#include "Sorts/Quick.h"
-#include "SampleData.h"
+#include <Algorithms/Sort.hpp>
 
-using namespace algorithms;
+using namespace Algorithms;
 
 int main() try
 {
-    auto unsorted = sampleData;
-    using Array = typeof(unsorted);
+    using Array = std::array<int, 8>;
+    const Array unsorted{4, 2, 56, -1, 1, 0, 8, 9};
 
     auto show = [unsorted](const std::string & label, const std::function<void(Array &)> & fn = [](auto &) {},
                            bool last = false) {

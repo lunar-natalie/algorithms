@@ -5,10 +5,8 @@
 
 #include <array>
 
-#include "Utils.h"
-
-namespace algorithms {
-template<typename T, Size N>
+namespace Algorithms {
+template<typename T, std::size_t N>
 void insertionSort(std::array<T, N> & arr)
 {
     // Assume the first value is sorted
@@ -24,4 +22,4 @@ void insertionSort(std::array<T, N> & arr)
         arr[end + 1] = key;
     }
 }
-}// namespace algorithms
+}// namespace Algorithms
