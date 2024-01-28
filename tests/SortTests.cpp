@@ -16,7 +16,7 @@ TEST_CASE("Sort sample data", "[SortTests]")
     const Array unsorted = {4, 2, 56, -1, 1, 0, 8, 9};
     const Array sorted = {-1, 0, 1, 2, 4, 8, 9, 56};
 
-    auto run = [unsorted, sorted](const std::function<void(Array &)> & fn) {
+    auto run = [&unsorted, &sorted](const std::function<void(Array &)> & fn) {
         auto copy = unsorted;
         fn(copy);
         CHECK(copy == sorted);
