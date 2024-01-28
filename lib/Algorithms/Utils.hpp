@@ -3,8 +3,6 @@
 
 #pragma once
 
-#include <cstddef>
-
 namespace Algorithms {
 template<typename T>
 constexpr void swap(T & lhs, T & rhs)
