@@ -4,10 +4,13 @@ project(Algorithms LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Catch2 3 CONFIG)
-
 add_subdirectory(lib)
 add_subdirectory(src)
-if(Catch2_FOUND)
-    add_subdirectory(tests)
+
+include(CTest)
+if(BUILD_TESTING)
+    find_package(Catch2 3 CONFIG)
+    if(Catch2_FOUND)
+        add_subdirectory(tests)
+    endif()
 endif()
