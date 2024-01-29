@@ -32,7 +32,7 @@ void mergeSort(std::array<T, N> & arr)
     };
 
     auto vec = sort(std::vector(arr.begin(), arr.end()));
-    // Return fixed-length array
+    // Copy back into fixed-length array
     if (vec.size() != N)
         throw std::runtime_error("Vector/array size mismatch");
     std::copy(vec.begin(), vec.end(), arr.begin());
